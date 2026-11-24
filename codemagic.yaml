@@ -5,6 +5,7 @@ workflows:
     scripts:
       - name: Build Debug APK
         script: |
-          gradle assembleDebug
+          yes | sdkmanager --licenses || true
+          gradle assembleDebug --stacktrace
     artifacts:
       - app/build/outputs/**/*.apk
